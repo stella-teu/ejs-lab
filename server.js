@@ -52,6 +52,11 @@ const RESTAURANT = {
     ]
   }
   
+RESTAURANT.menu.forEach( (item) => {
+    if (item.rating === 5){
+        item.name = "⭐" + item.name;
+    }
+    })
 
 app.get('/', (req, res) => {
     res.render('home.ejs', {
