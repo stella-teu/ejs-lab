@@ -92,9 +92,11 @@ app.get('/menu/:category', (req, res) => {
             menuItems.push(side);
         })
     }
+    let categoryName = req.params.category;
+    categoryName = categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
     res.render('category.ejs', {
         menuItems,
-        name: req.params.category,
+        name: categoryName,
     })
 })
 
